@@ -1,2 +1,9 @@
 - name: example
   url: https://example.com
+  domTransformation: |
+    (documentElement) => {
+      function changeHeader(root) {
+        documentElement.querySelector('h1').innerText = 'Changed using domTransformation'
+      }
+      changeHeader(documentElement);
+    }
